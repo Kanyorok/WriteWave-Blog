@@ -1,4 +1,4 @@
 class PagesController < ApplicationController
-  def WriteWave-Blog
+  def writewave
   end
 end
