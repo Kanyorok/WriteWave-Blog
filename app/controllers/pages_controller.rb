@@ -1,4 +1,3 @@
 class PagesController < ApplicationController
-  def writewave
-  end
+  def writewave; end
 end
