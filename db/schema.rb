@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_18_092955) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_19_111746) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.text "Text"
+    t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -35,7 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_092955) do
 
   create_table "posts", force: :cascade do |t|
     t.string "Title"
-    t.text "Text"
+    t.text "text"
     t.integer "CommentsCounter"
     t.integer "LikesCounter"
     t.datetime "created_at", null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_092955) do
     t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "post_counter"
   end
 
   add_foreign_key "comments", "posts"
