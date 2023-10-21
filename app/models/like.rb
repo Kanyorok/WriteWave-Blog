@@ -1,12 +1,12 @@
 class Like < ApplicationRecord
-  belongs_to :user
-  belongs_to :post
+  belongs_to :user, class_name: 'User', foreign_key: 'user_id'
+  belongs_to :post, class_name: 'Post', foreign_key: 'post_id', counter_cache: true
 
   after_save :updatepostcounter
 
   private
 
   def updatepostcounter
-    post.update(likescounter: post.likes.count)
+    post.update(likes_count: post.likes.count)
   end
 end
