@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :users
-  get '/users/:id', to: 'users#show'
-  get '/users/:user_id/posts', to: 'posts#index'
+  resources :users, only: %i[index show] do
+    resources :posts, only: %i[index show] do
+    end
+  end
   root 'home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
