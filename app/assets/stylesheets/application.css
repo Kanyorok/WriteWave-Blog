@@ -17,6 +17,12 @@
      padding-top: 80px;
      padding-bottom: 50px;
  }
+
+ .my-bio {
+    padding-top: 15px;
+    padding-bottom: 35px;
+ }
+
  @media (min-width: 992px) {
      .my-blog {
          padding-top: 100px;
@@ -189,5 +195,27 @@
  }
 
  .media-body a{
+    text-decoration: none;
+ }
+
+ .media-info ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding-right: 15px;
+ }
+
+ .media-info li{
+    font-family: "inter", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 133%;
+    color: #fff;
+    text-align: center;
+    margin-right: 32px;
+ }
+
+ .media-info a{
     text-decoration: none;
  }
