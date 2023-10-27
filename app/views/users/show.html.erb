@@ -11,15 +11,12 @@
         <% @user.recentposts.each do |post| %>
           <%= render partial: 'post', locals: { user: @user, post: post } %>
         <% end %>
-        <%= link_to "See all posts", user_posts_path(@user), class: "btn btn-primary" %>
+        <div class="text-center">
+            <%= link_to "See all posts", user_posts_path(@user), class: "btn btn-success" %>
+        </div>
       </div>
     <% else %>
       <h2><%= @user.name %> has no posts</h2>
     <% end %>
-    <div class="text-center">
-      <a href="/users/1/posts">
-        <button class="btn btn-success" type="button">Show All Posts</button>
-      </a>
-    </div>
   </div>
 </section>

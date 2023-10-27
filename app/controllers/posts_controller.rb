@@ -5,8 +5,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
-    @index = params[:index]
-    @user = current_user
+    logger.debug(params)
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+    @comments = @post.comments
   end
 end

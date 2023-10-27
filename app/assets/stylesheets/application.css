@@ -219,3 +219,9 @@
  .media-info a{
     text-decoration: none;
  }
+
+ .post-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
