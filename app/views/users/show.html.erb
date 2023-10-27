@@ -1,46 +1,25 @@
 <section class="my-bio bg-secondary bg-gradient">
-    <div class="container">
-        <div class="row">
-            <%= render partial: 'user', locals: { user: @user } %>
-        </div>
-        <div class="card my-4">
-            <%= render partial: 'bio', locals: { user: @user } %>
-        </div>
-        <div class="card my-4">
-            <div class="card-header"><h4>Post #1</h4></div>
-            <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and
-                feature the Bootstrap 5 card component!</div>
-            <div class="media-info">
-                <ul>
-                    <li><a href="#">Comments: 7</a></li>
-                    <li><a href="#">Likes: 7</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card my-4">
-            <div class="card-header"><h4>Post #2</h4></div>
-            <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and
-                feature the Bootstrap 5 card component!</div>
-            <div class="media-info">
-                <ul>
-                    <li><a href="#">Comments: 7</a></li>
-                    <li><a href="#">Likes: 7</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="card my-4">
-            <div class="card-header"><h4>Post #3</h4></div>
-            <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and
-                feature the Bootstrap 5 card component!</div>
-            <div class="media-info">
-                <ul>
-                    <li><a href="#">Comments: 7</a></li>
-                    <li><a href="#">Likes: 7</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="text-center">
-            <a href="/users/1/posts"><button class="btn btn-success" type="button">Show All Posts</button></a>
-        </div>
+  <div class="container">
+    <div class="row">
+      <%= render partial: 'user', locals: { user: @user } %>
     </div>
+    <div class="card my-4">
+      <%= render partial: 'bio', locals: { user: @user } %>
+    </div>
+    <% if @posts.any? %>
+      <div class="post-list">
+        <% @user.recentposts.each do |post| %>
+          <%= render partial: 'post', locals: { user: @user, post: post } %>
+        <% end %>
+        <%= link_to "See all posts", user_posts_path(@user), class: "btn btn-primary" %>
+      </div>
+    <% else %>
+      <h2><%= @user.name %> has no posts</h2>
+    <% end %>
+    <div class="text-center">
+      <a href="/users/1/posts">
+        <button class="btn btn-success" type="button">Show All Posts</button>
+      </a>
+    </div>
+  </div>
 </section>
