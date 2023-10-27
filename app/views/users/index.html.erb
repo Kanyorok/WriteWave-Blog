@@ -11,66 +11,10 @@
 		</div>
 		<!-- section title ends -->
 		<div class="row">
-            <div class="col-md-12">
-				<div class="media blog-media">
-				  <a href="blog-post-left-sidebar.html"><img class="d-flex" src="https://www.bootdey.com/image/350x380/6495ED/000000" alt="Generic placeholder image"></a>
-				  <div class="circle">
-				  	<h6 class="day">Last Post</h6>
-				  	<span class="month">4 sep</span>
-				  </div>
-				  <div class="media-body">
-				    <a href="/users/1"><h1 class="mt-4 text-center display-4">User Name</h1></a>
-                    <ul>
-				    	<li><a href="blog-post-left-sidebar.html">Number of Posts: 7</a></li>
-				    </ul>
-				  </div>
-				</div>
-			</div>
-             <div class="col-md-12">
-				<div class="media blog-media">
-				  <a href="blog-post-left-sidebar.html"><img class="d-flex" src="https://www.bootdey.com/image/350x380/6495ED/000000" alt="Generic placeholder image"></a>
-				  <div class="circle">
-				  	<h6 class="day">Last Post</h6>
-				  	<span class="month">4 sep</span>
-				  </div>
-				  <div class="media-body">
-				    <a href="/users/1"><h1 class="mt-4 text-center display-4">User Name</h1></a>
-                    <ul>
-				    	<li><a href="blog-post-left-sidebar.html">Number of Posts: 7</a></li>
-				    </ul>
-				  </div>
-				</div>
-			</div>
-             <div class="col-md-12">
-				<div class="media blog-media">
-				  <a href="blog-post-left-sidebar.html"><img class="d-flex" src="https://www.bootdey.com/image/350x380/6495ED/000000" alt="Generic placeholder image"></a>
-				  <div class="circle">
-				  	<h6 class="day">Last Post</h6>
-				  	<span class="month">4 sep</span>
-				  </div>
-				  <div class="media-body">
-				    <a href="/users/1"><h1 class="mt-4 text-center display-4">User Name</h1></a>
-                    <ul>
-				    	<li><a href="blog-post-left-sidebar.html">Number of Posts: 7</a></li>
-				    </ul>
-				  </div>
-				</div>
-			</div>
-             <div class="col-md-12">
-				<div class="media blog-media">
-				  <a href="blog-post-left-sidebar.html"><img class="d-flex" src="https://www.bootdey.com/image/350x380/6495ED/000000" alt="Generic placeholder image"></a>
-				  <div class="circle">
-				  	<h6 class="day">Last Post</h6>
-				  	<span class="month">4 sep</span>
-				  </div>
-				  <div class="media-body">
-				    <a href="/users/1"><h1 class="mt-4 text-center display-4">User Name</h1></a>
-                    <ul>
-				    	<li><a href="blog-post-left-sidebar.html">Number of Posts: 7</a></li>
-				    </ul>
-				  </div>
-				</div>
-			</div>
-        </div>
+			<% @users.each do |user| %>
+
+            	<%= render partial: 'user', locals: { user: user } %>
+			<% end %>
+		</div>    
 	</div>
 </section>
