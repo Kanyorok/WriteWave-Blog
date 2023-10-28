@@ -5,7 +5,8 @@
                     <h4># <%=@post.Title%></h4> <h4>Comments: <%=@post.comments_count%> Likes: <%=@post.likes_count%></h4>
                 </div>
                 <div class="card-body"> <p><%=@post.text%></p></div>
-                <div class="media-info">
+                <div class="media-info card-body">
+                    <%= render 'application/likes', post: @post, user: @user %>
                     <ul>
                         <li><a href="#">Comments: <%=@post.comments_count%></a></li>
                         <li><a href="#">Likes: <%=@post.likes_count%></a></li>
