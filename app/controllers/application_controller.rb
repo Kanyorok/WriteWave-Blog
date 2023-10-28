@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  helper_method :currentuser
+  helper_method :current_user
 
-  def currentuser
+  def current_user
     User.first
   end
 end

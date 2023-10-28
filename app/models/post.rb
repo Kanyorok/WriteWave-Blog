@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :user, foreign_key: 'author_id', counter_cache: true
+  belongs_to :author, class_name: 'User', counter_cache: true
   has_many :comments
   has_many :likes
 
@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   after_save :update_counter
 
   def update_counter
-    user.update(posts_count: user.posts.size)
+    author.update(posts_count: author.posts.size)
   end
 
   def recent_comment
