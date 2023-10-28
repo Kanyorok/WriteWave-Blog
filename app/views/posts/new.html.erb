@@ -1,6 +1,9 @@
 <section class="mb-5">
     <div class="card bg-light">
         <div class="card-body">
+            <a href="<%= user_path(@user) %>">
+                <button class="btn btn-primary mb-4">Back</button>
+            </a>
             <!-- Posts form-->
             <%= form_with  model: @post, url: user_posts_path(user_id: @user.id) do |form| %>
                 <div class="mb-3">

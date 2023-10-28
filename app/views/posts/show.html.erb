@@ -8,8 +8,8 @@
                 <div class="media-info card-body">
                     <%= render 'application/likes', post: @post, user: @user %>
                     <ul>
-                        <li><a href="#">Comments: <%=@post.comments_count%></a></li>
-                        <li><a href="#">Likes: <%=@post.likes_count%></a></li>
+                        <li>Comments: <%=@post.comments_count%></li>
+                        <li>Likes: <%=@post.likes_count%></li>
                     </ul>
                 </div>
                 <div class="accordion">
@@ -23,7 +23,9 @@
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
                             <div class="card-body">
                                 <!-- Single comment-->
-                                <%= render 'comments/new', post: @post, user: @user %>
+                                <%= render template: 'comments/new', post: @post, user: @user, class: "mb-3"%>
+                                <br/>
+                                <br/>
                                 <%if @post.recent_comment.count > 0%>
                                     <% @post.recent_comment.each do |comment| %>
                                         <div class="d-flex mb-4">

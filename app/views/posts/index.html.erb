@@ -26,6 +26,7 @@
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
                             <div class="card-body">
                                 <!-- Single comment-->
+                                <%= link_to "Add a comment", new_user_post_comment_path(post_id: post.id, user_id: @user.id), class: "btn btn-primary"%>
                                 <%if post.recent_comment.count > 0%>
                                     <% post.recent_comment.each do |comment| %>
                                         <div class="d-flex mb-4">
