@@ -14,7 +14,7 @@
 			</a>
 			<ul>
 				<li>
-					<h3>Number of Posts: <%=user.posts_count%>
+					<h3>Number of Posts: <%= user.posts_count.present? ? user.posts_count : 0 %>
 					</h3>
 				</li>
 			</ul>
