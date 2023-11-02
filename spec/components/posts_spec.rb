@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   describe 'GET users/:user_id/posts' do
     before :each do
-      get user_posts_path({ user_id: 1 })
+      get user_posts_path({ user_id: 426 })
     end
 
     it 'returns http success' do
@@ -15,13 +15,13 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders the correct text' do
-      expect(response.body).to match(/Show the user posts/)
+      expect(response.body).to match(/Number of Posts/)
     end
   end
 
   describe 'GET users/:user_id/posts/:id' do
     before :each do
-      get '/users/1/posts/1'
+      get '/users/426/posts/270'
     end
 
     it 'returns http success' do
@@ -33,7 +33,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders the correct text' do
-      expect(response.body).to match(/Show specific post/)
+      expect(response.body).to match(/The Formation/)
     end
   end
 end

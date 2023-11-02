@@ -18,7 +18,7 @@ RSpec.describe Comment, type: :model do
     expect(comment.post.comments.size).to be(1)
   end
   it 'comment user id should be same' do
-    expect(comment.user.id).to be(user.id)
+    expect(comment.author.id).to be(user.id)
   end
   it 'comment post id should be same' do
     expect(comment.post.id).to be(post.id)
