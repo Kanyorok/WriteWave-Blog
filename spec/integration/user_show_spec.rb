@@ -1,7 +1,9 @@
 require 'rails_helper'
 RSpec.describe 'userpostpage#show', type: :feature do
   before do
-    @user = User.create(name: 'John Doe', photo: 'https://res.cloudinary.com/dsfuiu63q/image/upload/v1678870006/avatars/icon-256x256_wa30f0.png', bio: 'Fullstack Dev Freelance',
+    @user = User.create(name: 'John Doe',
+                        photo: 'https://res.cloudinary.com/dsfuiu63q/image/upload/v1678870006/avatars/icon-256x256_wa30f0.png',
+                        bio: 'Fullstack Dev Freelance',
                         posts_count: 0)
     @post1 = Post.create(author_id: @user.id, Title: 'My First Post', text: 'This is the content of my first post.',
                          likes_count: 0, comments_count: 0)
