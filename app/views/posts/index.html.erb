@@ -11,8 +11,8 @@
                 <div class="card-body"><p class="mt-2"><%= truncate(post.text, length: 200, omission: '...') %></p></div>
                 <div class="media-info">
                     <ul>
-                        <li><a href="#">Comments: <%=post.comments_count%></a></li>
-                        <li><a href="#">Likes: <%=post.likes_count%></a></li>
+                        <li><a href="#">Comments: <%=post.comments_count.present? ? post.comments_count : 0%></a></li>
+                        <li><a href="#">Likes: <%=post.likes_count.present? ? post.comments_count : 0%></a></li>
                     </ul>
                 </div>
                 <div class="accordion">
