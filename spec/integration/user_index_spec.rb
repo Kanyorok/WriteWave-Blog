@@ -2,9 +2,9 @@ require 'rails_helper'
 RSpec.describe 'userpage#index', type: :feature do
   before do
     @users = [
-      User.create(name: 'Devendra', photo: 'dev.jpg', bio: 'Fullstack Engineer', posts_count: 0),
-      User.create(name: 'John', photo: 'John.png', bio: 'Web Developer', posts_count: 0),
-      User.create(name: 'James K.', photo: 'James.gif', bio: 'Kindergaten Teacher', posts_count: 0)
+      User.create(name: 'Devendra', photo: 'https://res.cloudinary.com/dsfuiu63q/image/upload/v1678870006/avatars/Basic_Ui__28186_29_kgczha.jpg', bio: 'Fullstack Engineer', posts_count: 0),
+      User.create(name: 'John', photo: 'https://res.cloudinary.com/dsfuiu63q/image/upload/v1678870006/avatars/Basic_Ui__28186_29_kgczha.jpg', bio: 'Web Developer', posts_count: 0),
+      User.create(name: 'James K.', photo: 'https://res.cloudinary.com/dsfuiu63q/image/upload/v1678870006/avatars/Basic_Ui__28186_29_kgczha.jpg', bio: 'Kindergaten Teacher', posts_count: 0)
     ]
 
     @posts = [
