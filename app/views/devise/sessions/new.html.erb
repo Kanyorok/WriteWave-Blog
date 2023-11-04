@@ -1,26 +1,36 @@
-<h2>Log in</h2>
+<div class="bg-white rounded-5">
+  <section class="w-100 p-4 d-flex justify-content-center">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { style: "width: 22rem;"}) do |f| %>
+      <h2 class="text-center">Log in</h2>
+      
+      <div class="form-outline mb-4">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
+      <div class="form-outline mb-4">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+      </div>
+      <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+          <% if devise_mapping.rememberable? %>
+            <div class="form-check">
+              <%= f.check_box :remember_me, class: "form-check-input" %>
+              <%= f.label :remember_me, class: "form-check-label"%>
+            </div>
+        </div>
+        <% end %>
+          <div class="col">
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+              <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+            <% end %>
+          </div>
+      </div>
+      <div class="actions">
+        <%= f.submit "Log in", type: "button", class: "btn btn-primary btn-block mb-4"%>
+      </div>
+    <% end %>
+  </section> 
+</div>
 <%= render "devise/shared/links" %>

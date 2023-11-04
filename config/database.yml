@@ -30,7 +30,7 @@ development:
   database: writewave
 
   # The specified database role being used to connect to postgres.
-  # To create additional roles in postgres see `$ createuser --help`.
+  # To create additional roles in postgres see `$ create-user --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
   #username: WriteWave_Blog
@@ -48,7 +48,7 @@ development:
   #port: 5432
 
   # Schema search path. The server defaults to $user,public
-  #schema_search_path: myapp,sharedapp,public
+  #schema_search_path: my-app,shared app,public
 
   # Minimum log levels, in increasing order:
   #   debug5, debug4, debug3, debug2, debug1,
