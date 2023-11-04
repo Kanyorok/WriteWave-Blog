@@ -30,6 +30,10 @@ gem 'stimulus-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+# Use the devise gem as the session and account manager for the application
+gem 'devise', '~> 4.9'
+
+# use the gem to add pagination to the app
 gem 'will_paginate'
 
 # Use Redis adapter to run Action Cable in production
@@ -75,9 +79,3 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
-# group :test do
-#   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-#   gem 'capybara'
-#   gem 'selenium-webdriver'
-# end

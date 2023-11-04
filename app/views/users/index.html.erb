@@ -12,7 +12,6 @@
 		<!-- section title ends -->
 		<div class="row">
 			<% @users.each do |user| %>
-
             	<%= render partial: 'user', locals: { user: user } %>
 			<% end %>
 		</div>    
